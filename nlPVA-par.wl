@@ -107,7 +107,7 @@ NormalN\[Mu][expr_,param_List]:=Module[{dummy,maxRec,\[Nu]=param[[3]],\[Mu]=para
 
 
 CompB[PFull_,QFull_,i_,j_,k_,param_List]:=Module[{dummy},$nl1=PFull[[2,2]];$nl2=QFull[[2,2]];dummy=SchBracket[{PFull[[1]],{PFull[[2,1]],PFull[[2,2]],$NW}},{QFull[[1]],{QFull[[2,1]],QFull[[2,2]],$NW}},i,j,k,param[[1]],param[[2]],param[[3]]];dummy=IntegrNL[dummy,param];dummy=NormalN\[Mu][dummy,param];Simplify[dummy//.{$NW->PFull[[2,3]],$NZ->QFull[[2,3]]}]];
-CompatCheck[PFull_,QFull_,param_List]:=Module[{listJacobi,dummyentr},listJacobi=Parallelize[Table[If[i<=j && j<=k,Simplify[CompB[PFull,QFull,i,j,k,param]], Null],{i,1,$d},{j,1,$d},{k,1,$d}],Method->"FinestGrained"];Return[listJacobi]];
+CompatCheck[PFull_,QFull_,param_List]:=Module[{listJacobi,dummyentr},listJacobi=Parallelize[Table[If[i<=j && j<=k,Simplify[CompB[PFull,QFull,i,j,k,param]], Null],{i,1,$d},{j,1,$d},{k,1,$d}],Method->"FinestGrained"];Return[DeleteCases[Flatten[listJacobi],Null]]];
 
 
 End[ ];
