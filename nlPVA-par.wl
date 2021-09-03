@@ -45,6 +45,8 @@ $genname=u;
 $varname=x;
 $parname=\[Beta];
 SetN[newd_Integer]:=Module[{},$d=newd;DistributeDefinitions["nlPVA`"]];
+GetN[]:=$d;
+SetMaxO[newO_Integer]:=Module[{},$maxO=newO;DistributeDefinitions["nlPVA`"]];
 GetMaxO[]:=$maxO;
 SetGenName[newname_]:=Module[{},$genname=newname;DistributeDefinitions["nlPVA`"]];
 GetGenName[]:=$genname;
