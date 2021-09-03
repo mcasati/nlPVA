@@ -3,7 +3,7 @@
 BeginPackage["nlPVA`"];
 
 Print["NonlocalPVA: a Mathematica package for working with weakly non local Poisson Vertex Algebras"];
-Print["Second version (2021). M. Casati, P. Lorenzoni, D. Valeri & R. Vitolo"];
+Print["Parallel version (2021). M. Casati, P. Lorenzoni, D. Valeri & R. Vitolo"];
 
 Clear["nlPVA`*"];
 Clear["nlPVA`Private`*"];
@@ -44,17 +44,15 @@ $maxO=5;
 $genname=u;
 $varname=x;
 $parname=\[Beta];
-SetN[newd_Integer]:=Module[{},$d=newd];
-GetN[]:=$d;
-SetMaxO[new_Integer]:=Module[{},$maxO=new];
+SetN[newd_Integer]:=Module[{},$d=newd;DistributeDefinitions["nlPVA`"]];
 GetMaxO[]:=$maxO;
-SetGenName[newname_]:=Module[{},$genname=newname];
+SetGenName[newname_]:=Module[{},$genname=newname;DistributeDefinitions["nlPVA`"]];
 GetGenName[]:=$genname;
-SetVarName[newname_]:=Module[{},$varname=newname];
+SetVarName[newname_]:=Module[{},$varname=newname;DistributeDefinitions["nlPVA`"]];
 GetVarName[]:=$varname;
-SetFormalParameter[newname_]:=Module[{},$parname=newname];
+SetFormalParameter[newname_]:=Module[{},$parname=newname;DistributeDefinitions["nlPVA`"]];
 GetFormalParameter[]:=$parname;
-SetTail[newl_Integer]:=Module[{},$ltail=newl];
+SetTail[newl_Integer]:=Module[{},$ltail=newl;DistributeDefinitions["nlPVA`"]];
 GetTail[]:=$ltail;
 
 
